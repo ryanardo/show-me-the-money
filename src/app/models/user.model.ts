@@ -4,6 +4,6 @@ export class User {
 	public projects: string[];
 	public donations: object[];
 
-	constructor(public username: string, public email: string, public password: string) { }
+	constructor(public name: string, public email: string, public password: string) { }
 
 }
