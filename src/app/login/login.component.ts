@@ -31,6 +31,14 @@ export class LoginComponent implements OnInit {
 			.catch((err) => console.log(err));
 	}
 
+	createAccount() {
+		this.authService.createAccount(this.user.email, this.user.password)
+			.then((res) => {
+				console.log(res);
+				this.router.navigate(['dashboard']);
+			})
+	}
+
 	signInWithEmail() {
 		this.authService.signInRegular(this.user.email, this.user.password)
 			.then((res) => {
