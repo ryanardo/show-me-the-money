@@ -31,6 +31,15 @@ export class LoginComponent implements OnInit {
 			.catch((err) => console.log(err));
 	}
 
+	createAccount() {
+		this.authService.createAccount(this.user.email, this.user.password)
+			.then((res) => {
+				console.log(res);
+				this.router.navigate(['dashboard']);
+			})
+			.catch((err) => alert(err));
+	}
+
 	signInWithEmail() {
 		this.authService.signInRegular(this.user.email, this.user.password)
 			.then((res) => {
@@ -38,7 +47,7 @@ export class LoginComponent implements OnInit {
 
 				this.router.navigate(['dashboard']);
 			})
-			.catch((err) => console.log('error: ' + err));
+			.catch((err) => alert(err));
 	}
 
 	ngOnInit() {

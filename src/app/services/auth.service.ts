@@ -26,14 +26,14 @@ export class AuthService {
 		);
 	}
 
+	createAccount(email, password) {
+		const credential = firebase.auth.EmailAuthProvider.credential(email, password);
+		return this._firebaseAuth.auth.createUserWithEmailAndPassword(email, password);
+	}
+
 	signInRegular(email, password) {
 		const credential = firebase.auth.EmailAuthProvider.credential(email, password);
-		console.log(credential);
-		if (credential != undefined) {
-			return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password);
-		} else {
-			return this._firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
-		}
+		return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password);
 	}
 
 	signInWithGoogle() {
