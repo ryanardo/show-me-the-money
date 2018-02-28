@@ -55,3 +55,17 @@ export class AuthService {
 			.then((res) => this.router.navigate(['/']));
 	}
 }
+
+// hg {gc: "goober@prat.com", jd: "bot", providerId: "password"}
+// gc
+// :
+// "goober@prat.com"
+// jd
+// :
+// "bot"
+// provider
+// :
+// "password"
+// providerId
+// :
+// "password"

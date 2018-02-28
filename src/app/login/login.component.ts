@@ -37,7 +37,10 @@ export class LoginComponent implements OnInit {
 				console.log(res);
 				this.router.navigate(['dashboard']);
 			})
+<<<<<<< HEAD
 			.catch((err) => alert(err));
+=======
+>>>>>>> e3a45215220f79d192b52c17ac2d741530ec1255
 	}
 
 	signInWithEmail() {
