@@ -10,11 +10,11 @@ const appRoutes: Routes = [
 		component: WelcomeComponent
 	},
 	{
-		path: 'admin',
+		path: 'user/:id/admin',
 		component: ProjectListComponent
 	},
 	{
-		path: 'user',
+		path: 'user/:id/profile',
 		component: LoginComponent
 	}
 ];
