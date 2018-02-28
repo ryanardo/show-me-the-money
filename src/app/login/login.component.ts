@@ -23,6 +23,17 @@ export class LoginComponent implements OnInit {
 	constructor(private authService: AuthService, private router: Router) {
 	}
 
+<<<<<<< HEAD
+=======
+	signInWithFacebook() {
+		this.authService.signInWithFacebook()
+			.then((res) => {
+				this.router.navigate(['dashboard'])
+			})
+			.catch((err) => console.log(err));
+	}
+
+>>>>>>> e842913dcac05cb9bfdf533a3c669e9e24b260f5
 	signInWithGoogle() {
 		this.authService.signInWithGoogle()
 			.then((res) => {

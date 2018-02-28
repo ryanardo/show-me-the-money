@@ -36,6 +36,15 @@ export class AuthService {
 		}
 	}
 
+<<<<<<< HEAD
+=======
+	signInWithFacebook() {
+		return this._firebaseAuth.auth.signInWithPopup(
+			new firebase.auth.FacebookAuthProvider()
+		)
+	}
+
+>>>>>>> e842913dcac05cb9bfdf533a3c669e9e24b260f5
 	signInWithGoogle() {
 		return this._firebaseAuth.auth.signInWithPopup(
 			new firebase.auth.GoogleAuthProvider()
