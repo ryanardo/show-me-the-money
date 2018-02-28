@@ -1,5 +1,4 @@
 export class User {
-
 	public favorites: string[];
 	public projects: string[];
 	public donations: object[];

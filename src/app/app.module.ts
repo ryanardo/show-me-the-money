@@ -2,19 +2,29 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
 import { routing } from './app.routing';
+
 import { AppComponent } from './app.component';
+
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './services/auth.service';
+
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { AlertModule } from 'ngx-bootstrap';
+
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
-import { LoginComponent } from './login/login.component';
 import { FeatureComponent } from './feature/feature.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
-import { masterFirebaseConfig } from './api-keys';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AlertModule } from 'ngx-bootstrap';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 export const firebaseConfig = {
 	apiKey: masterFirebaseConfig.apiKey,
@@ -32,18 +42,20 @@ export const firebaseConfig = {
 		ProjectDetailComponent,
 		LoginComponent,
 		FeatureComponent,
-		UserDetailComponent
+		UserDetailComponent,
+		DashboardComponent
 	],
 	imports: [
 		BrowserModule,
 		FormsModule,
 		HttpModule,
 		routing,
-		AngularFireModule.initializeApp(firebaseConfig),
+		AngularFireModule.initializeApp(masterFirebaseConfig, 'angular-auth-firebase'),
 		AlertModule.forRoot(),
-		AngularFireDatabaseModule
+		AngularFireDatabaseModule,
+		AngularFireAuthModule
 	],
-	providers: [],
+	providers: [AuthService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
