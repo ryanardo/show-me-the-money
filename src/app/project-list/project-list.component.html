@@ -1,3 +1,8 @@
-<p>
-  project-list works!
-</p>
+<h2>Projects For You To Browse or Fund</h2>
+
+<div *ngFor="let project of projects | async " class="panel panel-default">
+
+  <div class="panel-body">
+    <h3 (click)="goToDetailPage(project)"> {{project.title}} </h3>
+  </div>
+</div>

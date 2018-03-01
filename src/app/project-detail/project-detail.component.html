@@ -1,3 +1,13 @@
-<p>
-  project-detail works!
-</p>
+<p><strong>Title:</strong> {{projectToDisplay?.title}}</p>
+<p><strong>Type:</strong> {{projectToDisplay?.type}}</p>
+<p><strong>Description:</strong> {{projectToDisplay?.description}}</p>
+<p><strong>Swag:</strong> {{projectToDisplay?.swag}}</p>
+<p> $ {{projectToDisplay?.raised}} / $ {{projectToDisplay?.goal}}</p>
+
+<p>Would you like to donate to this project</p>
+
+<div class="form-group">
+  <label>Donation Amount($): </label>
+  <input #donation>
+  <button class="btn btn-outline-secondary" (click)="donate(donation.value); donation.value='';">Donate</button>
+</div>
