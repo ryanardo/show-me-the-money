@@ -24,6 +24,7 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { FeatureComponent } from './feature/feature.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UpdateUserProfileComponent } from './update-user-profile/update-user-profile.component';
 
 
 export const firebaseConfig = {
@@ -43,7 +44,8 @@ export const firebaseConfig = {
 		LoginComponent,
 		FeatureComponent,
 		UserDetailComponent,
-		DashboardComponent
+		DashboardComponent,
+		UpdateUserProfileComponent
 	],
 	imports: [
 		BrowserModule,

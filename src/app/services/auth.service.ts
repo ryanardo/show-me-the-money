@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class AuthService {
 
-	private user: Observable<firebase.User>;
+	user: Observable<firebase.User>;
 	private userDetails: firebase.User = null;
 
 	constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
@@ -25,6 +25,7 @@ export class AuthService {
 			}
 		);
 	}
+
 
 	createAccount(email, password) {
 		const credential = firebase.auth.EmailAuthProvider.credential(email, password);
@@ -55,17 +56,37 @@ export class AuthService {
 			.then((res) => this.router.navigate(['/']));
 	}
 }
-
-// hg {gc: "goober@prat.com", jd: "bot", providerId: "password"}
-// gc
-// :
-// "goober@prat.com"
-// jd
-// :
-// "bot"
-// provider
-// :
-// "password"
-// providerId
-// :
-// "password"
+	// Returns true if user is logged in
+// 	get authenticated(): boolean {
+// 		// consider changing to 'return this.userDetails != null'
+// 		if (this.userDetails == null) {
+// 			return false;
+// 		} else {
+// 			return true;
+// 		}
+// 	}
+//
+// 	// Returns current user UID
+// 	get currentUserId(): string {
+// 		return this.authenticated ? this.userDetails.uid : '';
+// 	}
+//
+// 	// Returns current user display name or Guest
+// 	get currentUserDisplayName(): string {
+// 		return this.userDetails.displayName || this.userDetails.email;
+// 	}
+// }
+//
+// // hg {gc: "goober@prat.com", jd: "bot", providerId: "password"}
+// // gc
+// // :
+// // "goober@prat.com"
+// // jd
+// // :
+// // "bot"
+// // provider
+// // :
+// // "password"
+// // providerId
+// // :
+// // "password"

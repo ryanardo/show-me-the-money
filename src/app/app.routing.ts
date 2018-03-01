@@ -22,6 +22,10 @@ const appRoutes: Routes = [
 	{
 		path: 'dashboard',
 		component: DashboardComponent
+	},
+	{
+		path: 'user-detail',
+		component: UserDetailComponent
 	}
 ];
 
